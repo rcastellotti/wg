@@ -1,0 +1,63 @@
+{% macro listing(l) -%}
+<div class="p-2 group rounded border shadow-md hover:shadow-xl text-xs sm:text-sm 
+        bg-neutral-100 hover:bg-neutral-200 text-gray-600
+        dark:bg-zinc-800 dark:hover:bg-zinc-900 dark:text-gray-200 dark:border-zinc-900">
+    <div class="grid grid-cols-12 gap-x-2">
+        <span class="col-span-12 flex gap-x-1">
+            <span class="text-gray-600 underline
+                        dark:text-gray-300">
+                Roberto Castellotti
+            </span>
+            ·
+            <small class="text-gray-400 dark:stone-100">3 hours ago</small>
+            <span class="ml-auto">
+                <a class="text-xs" href="/l/{{l.slug}}">#{{l.slug}}</a>
+                <i class="bi bi-three-dots-vertical"></i>
+            </span>
+        </span>
+        <h1 class="col-span-12 first-letter:uppercase font-semibold truncate
+                text-sm sm:text-lg
+                text-black
+                dark:text-white  ">
+            {{ l.title }}
+        </h1>
+        <div class="{{l.color}} col-span-4 flex 
+                    text-black
+                    dark:text-white">
+            <i class="bi {{l.icon}} text-5xl mx-auto my-auto"></i>
+        </div>
+
+        <div class="col-span-8 flex flex-col justify-between gap-y-2">
+            <p class="leading-4 sm:leading-5">{{ l.shortDescription }}</p>
+            <div class="flex flex-col">
+                <div class="flex items-center gap-x-1">
+                    <i class="bi bi-calendar-event-fill"></i>
+                    {{l.startDate.strftime('%d/%m/%Y')}} -
+                    {{l.endDate.strftime('%d/%m/%Y')}}
+                </div>
+                <div class="flex items-center gap-x-1">
+                    <i class="bi bi-geo-alt-fill"></i> {{l.city}}
+                </div>
+                <div class="flex items-center gap-x-1">
+                    <i class="bi bi-geo-fill"></i> {{l.street}}
+                </div>
+                <div class="flex items-center gap-x-1">
+                    <i class="bi bi-currency-euro"></i> {{l.price}}
+                </div>
+                <div class="flex items-center gap-x-1">
+                    <i class="bi bi-rulers"></i> {{l.dimension}} m²
+                </div>
+            </div>
+            <span class="ml-auto flex gap-x-2">
+                <i class="hover:text-gray-900 hover:scale-110 dark:hover:text-white bi bi-instagram"></i>
+                <i class="hover:text-gray-900 hover:scale-110 dark:hover:text-white bi bi-facebook"></i>
+                <i class="hover:text-gray-900 hover:scale-110 dark:hover:text-white bi bi-whatsapp"></i>
+                <i class="hover:text-gray-900 hover:scale-110 dark:hover:text-white bi bi-telegram"></i>
+                <i class="hover:text-gray-900 hover:scale-110 dark:hover:text-white bi bi-wechat"></i>
+                <i class="hover:text-gray-900 hover:scale-110 dark:hover:text-white bi bi-line"></i>
+                <i class="hover:text-gray-900 hover:scale-110 dark:hover:text-white bi bi-snapchat"></i>
+            </span>
+        </div>
+    </div>
+</div>
+{%- endmacro %}

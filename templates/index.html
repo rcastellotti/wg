@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% block content %} 
+{% from "listing.html" import listing with context %}
+{% for l in listings %}
+    {{ listing(l)}}
+{% endfor %}
+{% endblock %}
